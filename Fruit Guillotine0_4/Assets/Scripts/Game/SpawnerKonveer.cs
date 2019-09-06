@@ -1,0 +1,23 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpawnerKonveer : MonoBehaviour
+{
+   public float waitTime = 10f;
+    public GameObject fruit;
+    // Start is called before the first frame update
+    void Start()
+    {
+        Invoke("Spawn", waitTime);
+    }
+
+    // Update is called once per frame
+    void Spawn()
+    {
+        Instantiate(fruit, transform.position, transform.rotation);
+
+            Invoke("Spawn", waitTime);
+        
+    }
+}
